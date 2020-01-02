@@ -1,0 +1,48 @@
+#!/bin/bash
+if [ $# -eq 0  ] #  no argument present
+then
+    echo "No project name provided"
+    exit 1
+fi
+
+dir=${1//[^a-zA-Z0-9]/-}
+
+laravel new $1
+
+cd $dir
+
+code .
+
+dir=${dir//[^a-zA-Z0-9]/_}
+
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS $dir CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
+
+# Only if line contains baz, substitute foo with bar
+# sed '/baz/s/foo/bar/g' file.txt
+sed -i '' -e "/DB_DATABASE=/ s/=.*/=$dir/" .env
+sed -i '' -e "/DB_USERNAME=/ s/=.*/=root/" .env
+sed -i '' -e "/DB_PASSWORD=/ s/=.*/=/" .env
+
+# php artisan make:auth
+stub="$HOME/.dotfiles/scripts/stubs"
+cp -f $stub/DatabaseSeeder.php database/seeds/
+cp -f $stub/phpunit.xml .
+cp -f $stub/.idea .
+touch .workflow
+
+echo .idea >> .gitignore
+echo .workflow >> .gitignore
+echo .vscode >> .gitignore
+
+composer require laravel/telescope
+php artisan telescope:install
+
+php artisan migrate:fresh --seed
+
+git init
+
+git add .
+
+git commit -m 'initial'
+
+npm install

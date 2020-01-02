@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ $# -eq 0  ] #  no argument present
+then
+    echo "No project name provided"
+    exit 1
+fi
+
+dir=${1//[^a-zA-Z0-9]/-}
+
+cd $dir
+
+cp .env.example .env
+
+code .
+
+dir=${dir//[^a-zA-Z0-9]/_}
+
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS $dir CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
+
+# Only if line contains baz, substitute foo with bar
+# sed '/baz/s/foo/bar/g' file.txt
+sed -i '' -e "/DB_DATABASE=/ s/=.*/=$dir/" .env
+sed -i '' -e "/DB_USERNAME=/ s/=.*/=root/" .env
+sed -i '' -e "/DB_PASSWORD=/ s/=.*/=/" .env
+
+stub="$HOME/.dotfiles/scripts/stubs"
+cp -f $stub/.idea .
+touch .workflow
+
+composer install --ignore-platform-reqs
+php artisan key:generate
+php artisan migrate:fresh --seed
+npm install
