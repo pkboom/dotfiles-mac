@@ -11,12 +11,10 @@ alias ga="git add ."
 alias gl='git log --decorate --oneline --graph --all'
 alias gch='git checkout'
 alias gchm='git checkout master'
-alias gbase='git rebase'
-alias gbasem='git rebase master'
 alias gb="git branch"
 alias gbd="git branch -D"
-alias gclone="git clone"
 alias nah="git reset --hard && git clean -df"
+alias gpub='git push -u origin HEAD'
 
 DIR=${PWD##*/}
 if [ "code" = "$DIR" ] || [ "projects" = "$DIR" ]; then
@@ -40,8 +38,10 @@ package-new() {
 }
 
 wip() {
-    if [ "$1" = "up" ]; then # If command line argument is present
+    if [ "$1" = "up" ]; then
         git add . && git commit -m 'wip' && git push
+    elif [ "$1" = "pub" ]; then
+        git add . && git commit -m 'wip' && git push -u origin HEAD
     else
         git add . && git commit -m 'wip'
     fi
