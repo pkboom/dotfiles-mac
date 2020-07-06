@@ -1,0 +1,23 @@
+[user]
+	name = Keunbae Park
+	email = ppotpo@gmail.com
+[color]
+	ui = auto
+[merge]
+	confilctstyle = diff3
+[core]
+	editor = vim -f
+	excludesfile = /Users/keunbae/.gitignore_global
+[credetial]
+	helper = cache
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	# https://tomschlick.com/2017/03/20/git-forget
+	# https://jeffkreeftmeijer.com/git-git/
+	forget="! git fetch --prune && git branch -vv | awk '/: gone]/ {print $1}' | xargs git branch -D"

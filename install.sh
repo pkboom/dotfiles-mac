@@ -45,3 +45,7 @@ source .macos
 touch $HOME/.hushlogin
 
 ./link.sh
+
+mackup backup --force
+
+git config --global core.excludesfile $HOME/.gitignore_global
