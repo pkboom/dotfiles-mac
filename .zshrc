@@ -15,7 +15,12 @@ export PATH=$DOTFILES/scripts:$PATH
 # postgres
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 
+# pip
+export PATH=/Users/keunbae/Library/Python/2.7/bin:$PATH
+
 source $HOME/.dotfiles/aliases.zsh
+
+source $HOME/.dotfiles/functions.sh
 
 # Path to your oh-my-zsh installation.o
 export ZSH=$HOME/.oh-my-zsh
