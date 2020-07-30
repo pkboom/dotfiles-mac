@@ -5,7 +5,9 @@ composer-link() {
 
 package-new() {
     if [ -n "$1" ]; then # If command line argument is present
-        dir='$HOME/code/packages'
+        dir="$HOME/code/packages"
+
+        mkdir -p $dir
 
         git clone https://github.com/pkboom/skeleton-php "$dir/$1"
 
