@@ -41,3 +41,6 @@ DIR=${PWD##*/}
 if [ "code" = "$DIR" ]; then
     ls
 fi
+
+# remove % at the top
+unsetopt PROMPT_SP
