@@ -21,15 +21,23 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 # pip
 export PATH=/Users/keunbae/Library/Python/2.7/bin:$PATH
 
-source $HOME/.dotfiles/aliases.zsh
-
-source $HOME/.dotfiles/functions.sh
-
 # Path to your oh-my-zsh installation.o
 export ZSH=$HOME/.oh-my-zsh
 
+ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh-custom
+
+ZSH_THEME="robbyrussell2"
+
+plugins=(git laravel4 laravel5 composer osx vagrant)
+
 source $ZSH/oh-my-zsh.sh
 
-source $HOME/.dotfiles/robbyrussell2.zsh-theme
+source $HOME/.dotfiles/aliases.zsh
+source $HOME/.dotfiles/functions.sh
 
 export XDEBUG_CONFIG="idekey=VSCODE"
+
+DIR=${PWD##*/}
+if [ "code" = "$DIR" ]; then
+    ls
+fi

@@ -16,8 +16,3 @@ alias gbd="git branch -D"
 alias nah="git reset --hard && git clean -df"
 alias publish='legit publish'
 alias unpublish='legit unpublish'
-
-DIR=${PWD##*/}
-if [ "code" = "$DIR" ] || [ "projects" = "$DIR" ]; then
-    ls
-fi
