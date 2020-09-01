@@ -113,12 +113,39 @@ import-format() {
     if [ -n "$1" ]; then # If command line argument is present
         cd $1
 
-        wget https://raw.githubusercontent.com/pkboom/format/master/.eslintrc.js
-        wget https://raw.githubusercontent.com/pkboom/format/master/.php_cs.dist
-        wget https://raw.githubusercontent.com/pkboom/format/master/.prettierrc    
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.eslintrc.js
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.php_cs.dist
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.prettierrc    
     else
-        wget https://raw.githubusercontent.com/pkboom/format/master/.eslintrc.js
-        wget https://raw.githubusercontent.com/pkboom/format/master/.php_cs.dist
-        wget https://raw.githubusercontent.com/pkboom/format/master/.prettierrc    
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.eslintrc.js
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.php_cs.dist
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.prettierrc    
+    fi
+}
+
+laravel-new() {
+    if [ -n "$1" ]; then # If command line argument is present
+        laravel new $1
+
+        cd $1
+
+        composer require barryvdh/laravel-debugbar --dev
+        composer require --dev beyondcode/laravel-dump-server 
+
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.eslintrc.js
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.php_cs.dist
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.prettierrc    
+        wget https://gist.githubusercontent.com/calebporzio/cdf70bd390688646fda65490006eb0a6/raw/6e4f0117cb92c5015d99742424cb132e1dec36c7/tinker.config.php    
+
+        rm .gitignore
+        wget https://raw.githubusercontent.com/pkboom/setup-files/master/.gitignore    
+
+        touch .idea
+
+        git init
+
+        echo "Add PSYSH_CONFIG=tinker.config.php to .env"
+    else
+        echo "Application name is needed.";
     fi
 }
