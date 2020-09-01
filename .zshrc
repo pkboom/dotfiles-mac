@@ -12,14 +12,11 @@ export PATH=node_modules/.bin:vendor/bin:$PATH
 
 export DOTFILES=$HOME/.dotfiles
 
-# dotfiles
-export PATH=$DOTFILES/scripts:$PATH 
-
 # postgres
-export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+# export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 
 # pip
-export PATH=/Users/keunbae/Library/Python/2.7/bin:$PATH
+# export PATH=/Users/keunbae/Library/Python/2.7/bin:$PATH
 
 # Path to your oh-my-zsh installation.o
 export ZSH=$HOME/.oh-my-zsh
@@ -28,10 +25,9 @@ ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh-custom
 
 ZSH_THEME="robbyrussell2"
 
-plugins=(git laravel4 laravel5 composer osx vagrant)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
 source $HOME/.dotfiles/aliases.zsh
 source $HOME/.dotfiles/functions.sh
 
@@ -42,5 +38,5 @@ if [ "code" = "$DIR" ]; then
     ls
 fi
 
-# remove % at the top
-unsetopt PROMPT_SP
+# remove % before each prompt on zsh
+# unsetopt PROMPT_SP
