@@ -74,3 +74,5 @@ In general, I'd like to thank every single one who open-sources their dotfiles f
 
 1. install [iterm2](https://iterm2.com/)
 2. import terminal-default.json
+3. check out images/
+4.
