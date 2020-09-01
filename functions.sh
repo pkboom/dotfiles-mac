@@ -149,3 +149,8 @@ laravel-new() {
         echo "Application name is needed.";
     fi
 }
+
+# Create a new directory and enter it
+function mkd() {
+   mkdir -p "$@" && cd "$@"
+}
