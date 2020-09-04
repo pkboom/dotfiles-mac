@@ -26,12 +26,12 @@ pecl install memcached imagick
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
 
-# Create a Sites directory
+# Create a code directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
-mkdir $HOME/Sites
+mkdir $HOME/code
 
-# Create sites subdirectories
-mkdir $HOME/Sites/packages
+# Create code subdirectories
+mkdir $HOME/code/packages
 
 ./link.sh
 
