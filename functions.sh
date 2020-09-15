@@ -73,6 +73,7 @@ xdebug() {
         sudo sh -c "cat << 'EOF' >> $iniFileLocation
 zend_extension=xdebug.so
 xdebug.remote_enable=1
+#xdebug.remote_port=9001
 EOF"
 
         echo "xdebug is now active";
