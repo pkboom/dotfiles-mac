@@ -5,7 +5,7 @@ export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=$HOME/.node/bin:$PATH
 
 # Load npm global path
-export PATH=/Users/keunbae/.npm-packages/bin:$PATH
+export PATH=$HOME/.npm-packages/bin:$PATH
 
 # Use project specific binaries before global ones
 export PATH=node_modules/.bin:vendor/bin:$PATH
@@ -21,15 +21,15 @@ export DOTFILES=$HOME/.dotfiles
 # Path to your oh-my-zsh installation.o
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh-custom
+ZSH_CUSTOM=$DOTFILES/oh-my-zsh-custom
 
 ZSH_THEME="robbyrussell2"
 
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.dotfiles/aliases.zsh
-source $HOME/.dotfiles/functions.sh
+source $DOTFILES/aliases.zsh
+source $DOTFILES/functions.sh
 
 export XDEBUG_CONFIG="idekey=VSCODE"
 

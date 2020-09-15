@@ -75,3 +75,4 @@ In general, I'd like to thank every single one who open-sources their dotfiles f
 - import terminal-default.json
 - check out images folder
 - set [easy-move-resize](https://github.com/dmarcotte/easy-move-resize)
+- sync [Alfred](https://www.alfredapp.com/help/advanced/sync)
