@@ -152,6 +152,6 @@ laravel-new() {
 }
 
 # Create a new directory and enter it
-function mkd() {
+function mkcd() {
    mkdir -p "$@" && cd "$@"
 }
