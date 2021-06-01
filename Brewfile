@@ -107,3 +107,4 @@ mas 'Things', id: 904280696
 mas 'Tweetbot', id: 1384080005
 
 cask 'easy-move-plus-resize'
+cask 'dbeaver-community'
