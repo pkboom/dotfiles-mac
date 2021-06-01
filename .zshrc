@@ -12,12 +12,6 @@ export PATH=node_modules/.bin:vendor/bin:$PATH
 
 export DOTFILES=$HOME/.dotfiles
 
-# postgres
-# export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
-
-# pip
-# export PATH=/Users/keunbae/Library/Python/2.7/bin:$PATH
-
 # Path to your oh-my-zsh installation.o
 export ZSH=$HOME/.oh-my-zsh
 

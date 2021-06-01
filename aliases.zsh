@@ -14,5 +14,6 @@ alias gchm='git checkout master'
 alias gb="git branch"
 alias gbd="git branch -D"
 alias nah="git reset --hard && git clean -df"
+
 alias publish='legit publish'
 alias unpublish='legit unpublish'
