@@ -2,6 +2,11 @@
 
 echo "Setting up your Mac..."
 
+# Check for Oh My Zsh and install if we don't have it
+if test ! $(which omz); then
+  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+fi
+
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -18,7 +23,7 @@ brew bundle
 mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'a'; FLUSH PRIVILEGES;"
 
 # Install PHP extensions with PECL
-pecl install memcached imagick
+pecl install imagick memcached redis swoole
 
 # Install global Composer packages
 /usr/local/bin/composer global require laravel/installer laravel/valet
@@ -27,7 +32,6 @@ pecl install memcached imagick
 $HOME/.composer/vendor/bin/valet install
 
 # Create a code directory
-# This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/code
 
 # Create code subdirectories
