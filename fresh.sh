@@ -37,6 +37,9 @@ mkdir $HOME/code
 # Create code subdirectories
 mkdir $HOME/code/packages
 
+# Clone Github repositories
+./clone.sh
+
 ./link.sh
 
 # Set macOS preferences
