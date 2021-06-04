@@ -155,22 +155,6 @@ function rmrf() {
     rm -rf "$1"
 }
 
-function dart() {
-    docker-compose exec php php artisan "$@"
-}
-
 function dock() {
-    if [ "$1" = "dev" ]; then
-        docker-compose exec php npm run dev
-    elif [ "$1" = "watch" ]; then
-        docker-compose exec php npm run watch  
-    elif [ "$1" = "describe" ]; then
-        if [ -z "$2" ]; then # If no table
-            docker-compose exec db mysql -uhomestead -psecret -e "use homestead; show tables"
-        else
-            docker-compose exec db mysql -uhomestead -psecret -e "use homestead; describe $2"
-        fi
-    else
-        docker-compose exec php "$@"
-    fi
+     docker-compose exec php zsh
 }
