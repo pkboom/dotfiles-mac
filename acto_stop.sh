@@ -2,7 +2,7 @@
 
 cd $HOME/code/acto3.0
 
-docker-compose down
+docker-compose stop 
 
 echo
 echo 'acto3.0 stopped.'

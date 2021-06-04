@@ -11,5 +11,6 @@ echo
 cd $HOME/code/acto3.0
 
 sudo sysctl -w vm.max_map_count=262144
-docker-compose up -d
-docker volume prune -f
+docker-compose start
+# docker-compose up -d
+# docker volume prune -f
