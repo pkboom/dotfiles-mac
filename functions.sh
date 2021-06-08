@@ -156,5 +156,13 @@ function rmrf() {
 }
 
 function dock() {
-     docker-compose exec php zsh
+    if [ $1 = "watch" ]; then
+        docker-compose exec php npm run watch 
+    elif [ $1 = "dump" ]; then
+        docker-compose exec php php artisan dump-server
+    elif [ -n "$1" ]; then
+        docker-compose exec php $@
+    else
+        docker-compose exec php zsh
+    fi
 }
