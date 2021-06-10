@@ -156,10 +156,12 @@ function rmrf() {
 }
 
 function dock() {
-    if [ $1 = "watch" ]; then
+    if [ "$1" = "watch" ]; then
         docker-compose exec php npm run watch 
-    elif [ $1 = "dump" ]; then
+    elif [ "$1" = "dump" ]; then
         docker-compose exec php php artisan dump-server
+    elif [ "$1" = "tinker" ]; then
+        docker-compose exec php php artisan tinker
     elif [ -n "$1" ]; then
         docker-compose exec php $@
     else
