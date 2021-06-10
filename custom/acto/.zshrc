@@ -8,3 +8,5 @@ source ~/.oh-my-zsh/oh-my-zsh.sh
 source ~/aliases.sh
 
 source ~/functions.sh
+
+umask 000
