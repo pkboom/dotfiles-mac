@@ -39,7 +39,9 @@ function art() {
 
 function watch() {
     if [ -n "$1" ]; then
-        eval "npm run watch-${1}"
+        echo "cd nova-components/$1"
+
+        cd nova-components/$1 && npm run watch 
     else
         npm run watch
     fi
