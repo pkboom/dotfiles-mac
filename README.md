@@ -9,7 +9,7 @@
 1. Clone this repo to `~/.dotfiles` with:
 
    ```zsh
-   git clone git@github.com:driesvints/dotfiles.git ~/.dotfiles
+   git clone git@github.com:pkboom/dotfiles-mac.git ~/.dotfiles
    ```
 
 1. Run the installation with:
