@@ -24,7 +24,6 @@ brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'stripe/stripe-cli/stripe'
 brew 'stripe/stripe-mock/stripe-mock'
 brew 'svn'
-brew install legit
 
 # Development
 brew 'php'
@@ -94,3 +93,4 @@ mas 'Things', id: 904280696
 mas 'Tweetbot', id: 1384080005
 
 cask 'easy-move-plus-resize'
+brew 'legit'
