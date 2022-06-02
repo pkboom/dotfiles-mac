@@ -38,3 +38,8 @@ Thumbs.db
 .idea
 .vscode
 .vagrant
+
+#Personal
+jsconfig.json
+check.json
+urls.json

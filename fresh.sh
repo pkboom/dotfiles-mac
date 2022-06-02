@@ -38,7 +38,7 @@ pecl install imagick redis swoole
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
 
-# Create a Sites directory
+# Create a code directory
 mkdir $HOME/code
 
 # Create code subdirectories
