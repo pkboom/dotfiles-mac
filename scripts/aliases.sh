@@ -11,7 +11,6 @@ alias version="commit 'version'"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
-alias web="cd $HOME/code"
 
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
