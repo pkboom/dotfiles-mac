@@ -206,3 +206,7 @@ myip() {
 clear-hot() {
     kill "$(lsof -i:8080 | tail --lines 1 | awk '{print $2}')"
 }
+
+phpstorm() {
+    open -a /Applications/PhpStorm.app "$1"
+}
