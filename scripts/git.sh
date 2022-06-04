@@ -58,7 +58,7 @@ submit() {
   if [[ $REPOSITORY =~ 'github' ]]; then
     echo 'github'
   else
-    xdg-open https://bitbucket.org/inagene/"$DIR"/pull-requests/new\?source="$(git rev-parse --abbrev-ref HEAD)"\&t=1
+    open https://bitbucket.org/inagene/"$DIR"/pull-requests/new\?source="$(git rev-parse --abbrev-ref HEAD)"\&t=1
   fi
 
   return
@@ -70,12 +70,12 @@ repo() {
   repository=$(echo "$remote" | cut -d/ -f2- | sed 's/\.git//')
 
   if [[ $remote =~ 'bitbucket' ]]; then
-    xdg-open https://bitbucket.org/inagene/"$repository"/src/development
+    open https://bitbucket.org/inagene/"$repository"/src/development
   else
-    xdg-open https://github.com/pkboom/"$repository"
+    open https://github.com/pkboom/"$repository"
   fi
 
-  exit
+  # exit
 }
 
 gtp() {
