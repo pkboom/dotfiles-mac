@@ -115,3 +115,9 @@ source $DOTFILES/scripts/artisan.sh
 source $DOTFILES/scripts/composer.sh
 source $DOTFILES/scripts/functions.sh
 source $DOTFILES/scripts/git.sh
+
+# clear estate
+plugins=(nix-shell)
+
+eval "$(direnv hook zsh)"
+export DIRENV_LOG_FORMAT=

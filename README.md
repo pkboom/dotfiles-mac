@@ -28,3 +28,13 @@
 ```zsh
 curl https://raw.githubusercontent.com/pkboom/dotfiles-mac/master/ssh.sh | sh -s
 ```
+
+# Edit .zprofile
+
+```sh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+if ! [[ $(pwd) =~ 'code' ]]; then
+  cd ~/code
+fi
+```
