@@ -207,6 +207,6 @@ clear-hot() {
     kill "$(lsof -i:8080 | tail --lines 1 | awk '{print $2}')"
 }
 
-phpstorm() {
+storm() {
     open -a /Applications/PhpStorm.app "$1"
 }
