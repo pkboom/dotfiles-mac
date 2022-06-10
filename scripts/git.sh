@@ -76,8 +76,15 @@ repo() {
   else
     open https://github.com/"$username"/"$repository"
   fi
+}
 
-  # exit
+click() {
+  branch_name=$(git rev-parse --abbrev-ref HEAD)
+  task_id=$(echo "$branch_name" | cut -d_ -f1)
+
+  clickup_id=10531418
+
+  open https://app.clickup.com/t/"$clickup_id"/"$task_id"
 }
 
 gtp() {
