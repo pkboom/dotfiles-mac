@@ -67,12 +67,13 @@ submit() {
 repo() {
   remote=$(git config --get remote.origin.url)
 
-  repository=$(echo "$remote" | cut -d/ -f2- | sed 's/\.git//')
+  username=$(echo "$remote" | cut -d: -f2 | sed 's/\/.*//')
+  repository=$(echo "$remote" | cut -d/ -f2 | sed 's/\.git//')
 
   if [[ $remote =~ 'bitbucket' ]]; then
-    open https://bitbucket.org/inagene/"$repository"/src/development
+    open https://bitbucket.org/"$username"/"$repository"/src/development
   else
-    open https://github.com/pkboom/"$repository"
+    open https://github.com/"$username"/"$repository"
   fi
 
   # exit
