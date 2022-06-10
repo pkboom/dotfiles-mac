@@ -66,12 +66,13 @@ submit() {
 
 repo() {
   remote=$(git config --get remote.origin.url)
-
   username=$(echo "$remote" | cut -d: -f2 | sed 's/\/.*//')
   repository=$(echo "$remote" | cut -d/ -f2 | sed 's/\.git//')
 
   if [[ $remote =~ 'bitbucket' ]]; then
     open https://bitbucket.org/"$username"/"$repository"/src/development
+  elif [[ $remote =~ 'clearestate' ]]; then
+    open https://github.com/"$username"/"$repository"/pulls/@me
   else
     open https://github.com/"$username"/"$repository"
   fi
