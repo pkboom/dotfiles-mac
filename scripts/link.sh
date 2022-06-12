@@ -11,3 +11,6 @@ ln -s "$HOME"/.dotfiles/.gitconfig "$HOME"
 
 rm -rf "$HOME"/.gitignore_global
 ln -s "$HOME"/.dotfiles/.gitignore_global "$HOME"
+
+# Symlink the Mackup config file to the home directory
+ln -s "$HOME"/.dotfiles/.mackup.cfg "$HOME"
