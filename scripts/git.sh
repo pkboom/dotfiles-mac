@@ -84,7 +84,7 @@ click() {
   clickup_id=10531418
 
   if ! [[ $task_id =~ (PRO|DEV|RES) ]]; then
-    open https://app.clickup.com/t/"$clickup_id"
+    open https://app.clickup.com/"$clickup_id"
   else
     open https://app.clickup.com/t/"$clickup_id"/"$task_id"
   fi
