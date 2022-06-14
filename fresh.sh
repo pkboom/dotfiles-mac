@@ -45,3 +45,6 @@ $DOTFILES/scripts/link.sh
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos
+
+# Check if ~/.zpofile exists.
+# If not, create ln in link.sh
