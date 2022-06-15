@@ -29,6 +29,14 @@
 curl https://raw.githubusercontent.com/pkboom/dotfiles-mac/master/ssh.sh | sh -s
 ```
 
+### Restore mackup backup
+
+If icloud is synced, run this command to restore configurations.
+
+```zsh
+mackup restore
+```
+
 ### iCloud settings
 
 System Prefrences > iCloud > iCloud Drive ( Options ) > uncheck apps (that I don't use)
