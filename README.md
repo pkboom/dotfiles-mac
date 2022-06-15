@@ -28,3 +28,7 @@
 ```zsh
 curl https://raw.githubusercontent.com/pkboom/dotfiles-mac/master/ssh.sh | sh -s
 ```
+
+### iCloud settings
+
+System Prefrences > iCloud > iCloud Drive ( Options ) > uncheck apps (that I don't use)
