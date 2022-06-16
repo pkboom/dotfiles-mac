@@ -1,19 +1,15 @@
-# This plugin adds `clearestate` commands.
+# This plugin adds `clearestate` shell commands.
 
 ## Installation
 
 ```sh
-git clone https://github.com/clearestate/zsh-clearestate.git $ZSH_CUSTOM/plugins/clearestate
+git clone https://github.com/pkboom/clearestate.git $ZSH_CUSTOM/plugins/clearestate
 ```
 
 Add the plugin in `~/.zshrc`
 
 ```sh
 plugins=(... clearestate)
-
-# Do not put `clearestate` plugin with `nix-shell` plugin together.
-
-plugins=(nix-shell)
 ```
 
 Update the shell
@@ -28,4 +24,4 @@ source ~/.zshrc
 $ce<space><tab>
 ```
 
-<img src="/screenshot.png" width="800"  title="demo">
+<img src="/screenshot-ce.png" width="800"  title="demo">

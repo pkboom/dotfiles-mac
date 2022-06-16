@@ -9,7 +9,7 @@ wip() {
 grd() {
   git stash -u
 
-  git rebase development
+  git rebase develop
 
   git stash pop
 }
@@ -70,7 +70,7 @@ repo() {
   repository=$(echo "$remote" | cut -d/ -f2 | sed 's/\.git//')
 
   if [[ $remote =~ 'bitbucket' ]]; then
-    open https://bitbucket.org/"$username"/"$repository"/src/development
+    open https://bitbucket.org/"$username"/"$repository"/src/develop
   elif [[ $remote =~ 'clearestate' ]]; then
     open https://github.com/"$username"/"$repository"/pulls/@me
   else
