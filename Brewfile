@@ -27,7 +27,7 @@ brew 'svn'
 
 # Development
 brew 'php'
-brew 'php@8.0'
+brew 'php@8.1'
 brew 'php@7.4'
 brew 'composer'
 brew 'imagemagick'
@@ -38,6 +38,7 @@ brew 'nginx'
 brew 'node'
 brew 'redis'
 brew 'yarn'
+brew 'legit'
 
 # Apps
 cask '1password'
