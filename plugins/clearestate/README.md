@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-git clone https://github.com/pkboom/clearestate.git $ZSH_CUSTOM/plugins/clearestate
+git clone https://github.com/pkboom/zsh-clearestate.git $ZSH_CUSTOM/plugins/clearestate
 ```
 
 Add the plugin in `~/.zshrc`
@@ -21,7 +21,11 @@ source ~/.zshrc
 ## Usage
 
 ```sh
+# Show all commands
 $ce<space><tab>
+
+# Show all commands starting with `mig`
+$ce mig<tab>
 ```
 
 <img src="/screenshot-ce.png" width="800"  title="demo">

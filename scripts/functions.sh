@@ -110,18 +110,18 @@ describe() {
     table=$2
 
     if [ "$DATABASE_MANAGEMENT_SYSTEM" = "mysql" ]; then
+        if [ -z "$2" ]; then # If no table
+            psql -c "\d" "$database"
+        else
+            psql -c "\d $table" "$database"
+        fi
+    else
         if [ -z "$1" ]; then # If no database
             mysql -uroot -e "show databases"
         elif [ -z "$2" ]; then # If no table
             mysql -uroot -e "use $1; show tables"
         else
             mysql -uroot -e "use $1; describe $2"
-        fi
-    else
-        if [ -z "$2" ]; then # If no table
-            psql -c "\d" "$database"
-        else
-            psql -c "\d $table" $database
         fi
     fi
 }
@@ -209,4 +209,11 @@ clear-hot() {
 
 storm() {
     open -a /Applications/PhpStorm.app "$1"
+}
+
+# open a project on chrome
+page() {
+    DIR=${PWD##*/}
+
+    open http://"$DIR".test
 }

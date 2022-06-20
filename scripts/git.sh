@@ -78,6 +78,7 @@ repo() {
   fi
 }
 
+# go to clickup.com
 click() {
   branch_name=$(git rev-parse --abbrev-ref HEAD)
   task_id=$(echo "$branch_name" | cut -d_ -f1)
@@ -91,6 +92,7 @@ click() {
 
 }
 
+# create a tag
 gtp() {
   new_tag=$1
 
