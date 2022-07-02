@@ -116,6 +116,9 @@ source $DOTFILES/scripts/composer.sh
 source $DOTFILES/scripts/functions.sh
 source $DOTFILES/scripts/git.sh
 
+# Disable annoying confirm
+setopt rmstarsilent
+
 # clear estate
 plugins=(nix-shell)
 
