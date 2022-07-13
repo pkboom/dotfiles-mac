@@ -31,9 +31,9 @@ web() {
 
 dev() {
     if [ -n "$1" ]; then
-        cd "$1" && npx mix
+        cd "$1" && npm run dev
     else
-        npx mix
+        npm run dev
     fi
 }
 
@@ -216,4 +216,8 @@ page() {
     DIR=${PWD##*/}
 
     open http://"$DIR".test
+}
+
+share() {
+    ngrok http 8080
 }

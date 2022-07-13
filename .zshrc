@@ -116,8 +116,14 @@ source $DOTFILES/scripts/composer.sh
 source $DOTFILES/scripts/functions.sh
 source $DOTFILES/scripts/git.sh
 
-# Disable annoying confirm
+# Disable annoying confirm “zsh: sure you want to delete all the files”
 setopt rmstarsilent
+
+DIR=${PWD##*/}
+
+if [ "code" = "$DIR" ]; then
+  ls
+fi
 
 # clear estate
 plugins=(nix-shell)
