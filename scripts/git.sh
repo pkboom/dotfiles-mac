@@ -7,11 +7,7 @@ wip() {
 }
 
 grd() {
-  git stash -u
-
   git rebase develop
-
-  git stash pop
 }
 
 formatting() {
