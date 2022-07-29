@@ -221,7 +221,3 @@ page() {
 
     open http://"$DIR".test
 }
-
-share() {
-    ngrok http 8080
-}
