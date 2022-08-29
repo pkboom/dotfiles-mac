@@ -6,10 +6,6 @@ wip() {
   fi
 }
 
-grd() {
-  git rebase develop
-}
-
 formatting() {
   if [ "$1" = "up" ]; then
     git add . && git commit -m 'formatting' && git push
@@ -20,25 +16,30 @@ formatting() {
 
 up() {
   if [ -z "$*" ]; then
-    STEP=1
+    step=1
   else
-    STEP="$*"
+    step="$*"
   fi
 
   CURRENT=$(git rev-parse --short HEAD)
 
-  HASHES=($(git log --oneline --all --graph | awk '{print $2}'))
+  REMOTE=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})
 
-  for ((i = ${#HASHES[@]}; i > 0; i--)); do
-    if [ "${HASHES[$i]}" = "$CURRENT" ]; then
+  count=0
+  hashes=()
+
+  for hash in $(git rev-list --max-count=5 --abbrev-commit "$REMOTE"); do
+    count=$((count + 1)) # increment
+    hashes+=("$hash")
+    if [ "$hash" = "$CURRENT" ]; then
       break
     fi
   done
 
-  if [ "$i" -le 1 ]; then
+  if [ "$count" -le 1 ]; then
     echo "Can't move forward. No commit found."
   else
-    git reset "${HASHES[$i - STEP]}"
+    git reset "${hashes[$count - $step]}"
   fi
 }
 
@@ -46,12 +47,13 @@ down() {
   git reset HEAD~"$*"
 }
 
-submit() {
+pr() {
   DIR=${PWD##*/}
 
   REPOSITORY=$(git remote -v | head -n 1)
 
   if [[ $REPOSITORY =~ 'github' ]]; then
+    # $(gh pr create --title asdf-asdf_asdf --assignee @me --draft)
     echo 'github'
   else
     open https://bitbucket.org/inagene/"$DIR"/pull-requests/new\?source="$(git rev-parse --abbrev-ref HEAD)"\&t=1

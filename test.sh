@@ -1,9 +1,8 @@
 #!/bin/sh
 
-forward=$(curl -s http://localhost:4040/api/tunnels | jq '.tunnels[0].public_url' | sed 's/"//')
+remote=$(git config --get remote.origin.url)
+branch_name=$(git rev-parse --abbrev-ref HEAD)
 
-# forward="https://df1b-76-70-89-92.ngrok.io"
+$(gh pr create --title "$branch_name" --assignee @me --draft)
 
-clearEstatePath=~/code/clearestate-app/api/.env
-
-sed -i -e "s#WEBHOOK_URL=.*#WEBHOOK_URL=$forward#" $clearEstatePath
+# return
