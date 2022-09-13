@@ -31,9 +31,9 @@ web() {
 
 dev() {
     if [ -n "$1" ]; then
-        cd "$1" && npx mix
+        cd "$1" && npm run dev
     else
-        npx mix
+        npm run dev
     fi
 }
 
@@ -205,6 +205,10 @@ myip() {
 
 clear-hot() {
     kill "$(lsof -i:8080 | tail -n 1 | awk '{print $2}')"
+
+    # lsof -i -P -n | grep LISTEN | grep 80
+    # -P: inhibits the conversion of port numbers to port names for network files.
+    # -n: inhibits the conversion of network numbers to host names for network files.
 }
 
 storm() {

@@ -7,11 +7,7 @@ wip() {
 }
 
 grd() {
-  git stash -u
-
   git rebase develop
-
-  git stash pop
 }
 
 formatting() {
@@ -24,25 +20,28 @@ formatting() {
 
 up() {
   if [ -z "$*" ]; then
-    STEP=1
+    step=1
   else
-    STEP="$*"
+    step="$*"
   fi
 
-  CURRENT=$(git rev-parse --short HEAD)
+  current=$(git rev-parse --short HEAD)
+  remote=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})
+  count=0
+  hashes=()
 
-  HASHES=($(git log --oneline --all --graph | awk '{print $2}'))
-
-  for ((i = ${#HASHES[@]}; i > 0; i--)); do
-    if [ "${HASHES[$i]}" = "$CURRENT" ]; then
+  for hash in $(git rev-list --max-count=5 --abbrev-commit "$remote"); do
+    count=$((count + 1)) # increment
+    hashes+=("$hash")
+    if [ "$hash" = "$current" ]; then
       break
     fi
   done
 
-  if [ "$i" -le 1 ]; then
+  if [ "$count" -le 1 ]; then
     echo "Can't move forward. No commit found."
   else
-    git reset "${HASHES[$i - STEP]}"
+    git reset "${hashes[$count - $step]}"
   fi
 }
 
@@ -51,17 +50,40 @@ down() {
 }
 
 submit() {
-  DIR=${PWD##*/}
-
-  REPOSITORY=$(git remote -v | head -n 1)
-
-  if [[ $REPOSITORY =~ 'github' ]]; then
-    echo 'github'
-  else
-    open https://bitbucket.org/inagene/"$DIR"/pull-requests/new\?source="$(git rev-parse --abbrev-ref HEAD)"\&t=1
-  fi
+  repository=$(git remote -v | head -n 1)
+  branch_name=$(git rev-parse --abbrev-ref HEAD)
 
   return
+}
+
+pr() {
+  dir=${PWD##*/}
+  remote=$(git config --get remote.origin.url)
+  username=$(echo "$remote" | cut -d: -f2 | sed 's/\/.*//')
+  repository=$(echo "$remote" | cut -d/ -f2 | sed 's/\.git//')
+  branch_name=$(git rev-parse --abbrev-ref HEAD)
+
+  if [ "$1" = "submit" ]; then
+    if [[ $remote =~ 'github' ]]; then
+      gh pr create --title "$branch_name" --assignee @me,dannyyassine-ce --web --base develop
+    else
+      open https://bitbucket.org/inagene/"$dir"/pull-requests/new\?source="$branch_name"\&t=1
+    fi
+
+    return
+  fi
+
+  if [ "$1" = "list" ]; then
+    gh pr list --assignee pkboom --web
+
+    return
+  fi
+
+  if [[ $remote =~ 'bitbucket' ]]; then
+    open https://bitbucket.org/"$username"/"$repository"/src/develop
+  elif [[ $remote =~ 'clearestate' ]]; then
+    gh pr view --web
+  fi
 }
 
 repo() {
@@ -71,8 +93,6 @@ repo() {
 
   if [[ $remote =~ 'bitbucket' ]]; then
     open https://bitbucket.org/"$username"/"$repository"/src/develop
-  elif [[ $remote =~ 'clearestate' ]]; then
-    open https://github.com/"$username"/"$repository"/pulls/@me
   else
     open https://github.com/"$username"/"$repository"
   fi

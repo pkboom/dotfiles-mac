@@ -30,14 +30,9 @@ alias gbd="git branch -D"
 alias gr="git rebase"
 alias gt="git tag"
 alias nah="git reset --hard && git clean -df"
-alias publish="git publish"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias mix='npx mix'
-
-# legit
-alias publish='legit publish'
-alias unpublish='legit unpublish'
 
 alias sshkey="cat ~/.ssh/id_rsa.pub | tee /dev/tty | xclip -sel clip"
