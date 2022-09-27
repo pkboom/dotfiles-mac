@@ -51,6 +51,7 @@ require_remove_package() {
         "pkboom/test-creator --dev"
         "pkboom/dump-variable --dev"
         "symfony/var-dumper --dev"
+        "pkboom/laravel-pick --dev"
     )
 
     select package in "${packages[@]}"; do
