@@ -117,26 +117,33 @@ gtp() {
   new_tag=$1
 
   if [ -z "$1" ]; then
+    # implode with '.'
     IFS='.' read -rA tag <<<"$(git describe --abbrev=0 --tags)"
 
-    old_tag=$(
-      IFS='.'
-      echo "${tag[*]}"
-    )
-    new_tag_last=$((${tag[-1]} + 1))
+    if [ -z "$tag" ]; then
+      new_tag='0.0.1'
 
-    length=${#tag[@]}
+      echo "✓ New tag created. $new_tag"
+    else
+      old_tag=$(
+        IFS='.'
+        echo "${tag[*]}"
+      )
+      new_tag_last=$((${tag[-1]} + 1))
 
-    tag_without_last=("${tag[@]:0:(($length - 1))}")
+      length=${#tag[@]}
 
-    tag=($tag_without_last $new_tag_last)
+      tag_without_last=("${tag[@]:0:(($length - 1))}")
 
-    new_tag=$(
-      IFS='.'
-      echo "${tag[*]}"
-    )
+      tag=($tag_without_last $new_tag_last)
 
-    echo "✓ New tag created. $old_tag ==> $new_tag"
+      new_tag=$(
+        IFS='.'
+        echo "${tag[*]}"
+      )
+
+      echo "✓ New tag created. $old_tag ==> $new_tag"
+    fi
   fi
 
   git tag "$new_tag" && git push --tags

@@ -50,6 +50,7 @@ require_remove_package() {
         "pkboom/move-class --dev"
         "pkboom/test-creator --dev"
         "pkboom/dump-variable --dev"
+        "symfony/var-dumper --dev"
     )
 
     select package in "${packages[@]}"; do
