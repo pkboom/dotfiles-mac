@@ -19,7 +19,7 @@ c() {
     fi
 
     PS3="Select composer command: "
-    composer_commands=("require" "remove" "create" "repositories")
+    composer_commands=("require" "remove" "create" "link" "clone")
 
     select command in "${composer_commands[@]}"; do
         echo "$command"
@@ -28,8 +28,11 @@ c() {
         create)
             create_package
             ;;
-        repositories)
-            create_repository
+        link)
+            link_repository
+            ;;
+        clone)
+            clone
             ;;
         *)
             require_remove_package "$command"
@@ -38,6 +41,35 @@ c() {
 
         return
     done
+}
+
+clone() {
+    PS3="Select package: "
+    packages=(
+        "laravel-dump-server"
+        "laravel-grab"
+        "laravel-test-watcher"
+        "laravel-tinker-on-vscode"
+        "move-class"
+        "test-creator"
+        "dump-variable"
+        "laravel-pick"
+    )
+
+    select package in "${packages[@]}"; do
+        break
+    done
+
+    if ! [[ $REPLY =~ ^[0-9]+$ ]]; then
+        package=$REPLY
+    fi
+
+    printf "git clone git@github.com:pkboom/%s.git %s" "$package" "/Users/keunbae/code/packages/$package"
+    echo
+
+    git clone git@github.com:pkboom/"$package".git /Users/keunbae/code/packages/"$package"
+
+    code /Users/keunbae/code/packages/"$package"
 }
 
 require_remove_package() {
@@ -65,10 +97,10 @@ require_remove_package() {
     printf "composer %s %s" "$1" "$package"
     echo
 
-    $(printf "composer %s %s" "$1" "$package")
+    composer "$1" "$package"
 }
 
-create_repository() {
+link_repository() {
     PS3="Select package: "
     packages=($HOME/code/packages/*)
 
