@@ -65,7 +65,8 @@ pr() {
 
   if [ "$1" = "submit" ]; then
     if [[ $remote =~ 'github' ]]; then
-      gh pr create --title "$branch_name" --assignee @me,dannyyassine-ce --web --base develop
+      gh pr create --title "$branch_name" --assignee @me,thenu-ce --web --base develop
+      # gh pr create --title "$branch_name" --assignee @me,dannyyassine-ce --web --base develop
     else
       open https://bitbucket.org/inagene/"$dir"/pull-requests/new\?source="$branch_name"\&t=1
     fi

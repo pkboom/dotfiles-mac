@@ -97,7 +97,7 @@ require_remove_package() {
     printf "composer %s %s" "$1" "$package"
     echo
 
-    composer "$1" "$package"
+    $(printf "composer %s %s" "$1" "$package")
 }
 
 link_repository() {
