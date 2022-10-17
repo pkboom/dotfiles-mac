@@ -65,9 +65,7 @@ pr() {
 
   if [ "$1" = "submit" ]; then
     if [ -z "$2" ]; then
-      read -r "name?base name(develop): "
-
-      base=${name:-develop}
+      base="develop"
     else
       base="$2"
     fi
