@@ -64,11 +64,23 @@ pr() {
   branch_name=$(git rev-parse --abbrev-ref HEAD)
 
   if [ "$1" = "submit" ]; then
-    if [[ $remote =~ 'github' ]]; then
-      gh pr create --title "$branch_name" --assignee @me,thenu-ce --web --base develop
-      # gh pr create --title "$branch_name" --assignee @me,dannyyassine-ce --web --base develop
+    if [ -z "$2" ]; then
+      read -r "name?base name(develop): "
+
+      base=${name:-develop}
     else
-      open https://bitbucket.org/inagene/"$dir"/pull-requests/new\?source="$branch_name"\&t=1
+      base="$2"
+    fi
+
+    echo "Submitting pull request based on '$base' branch."
+    echo
+
+    if [[ $remote =~ 'github' ]]; then
+      gh pr create --title "$branch_name" --assignee @me,thenu-ce --web --base "$base"
+      # gh pr create --title "$branch_name" --assignee @me,dannyyassine-ce --web --base "$base"
+    else
+      echo "We need bitbucket url"
+      # open https://bitbucket.org/inagene/"$dir"/pull-requests/new\?source="$base"\&t=1
     fi
 
     return
