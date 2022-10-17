@@ -57,7 +57,7 @@ submit() {
 }
 
 pr() {
-  dir=${PWD##*/}
+  # dir=${PWD##*/}
   remote=$(git config --get remote.origin.url)
   username=$(echo "$remote" | cut -d: -f2 | sed 's/\/.*//')
   repository=$(echo "$remote" | cut -d/ -f2 | sed 's/\.git//')
@@ -92,10 +92,10 @@ pr() {
     return
   fi
 
-  if [[ $remote =~ 'bitbucket' ]]; then
-    open https://bitbucket.org/"$username"/"$repository"/src/develop
-  elif [[ $remote =~ 'clearestate' ]]; then
+  if [[ $remote =~ 'clearestate' ]]; then
     gh pr view --web
+  elif [[ $remote =~ 'bitbucket' ]]; then
+    open https://bitbucket.org/"$username"/"$repository"/src/develop
   fi
 }
 

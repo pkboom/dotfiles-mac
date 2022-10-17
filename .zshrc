@@ -98,8 +98,15 @@ setopt rmstarsilent
 DIR=${PWD##*/}
 
 if [ "code" = "$DIR" ]; then
-  ls
+    ls
 fi
+
+# https://zsh.sourceforge.io/Doc/Release/Completion-System.html#Functions-3
+# The first form defines the function to call for completion.
+# Alternatively, all the arguments may have the form ‘cmd=service’.
+# The argument for cmd will be completed in the same way as service.
+# This is for pr() so that I can do 'pr submit <tab>'
+compdef _git pr=git-branch
 
 # terraform
 autoload -U +X bashcompinit && bashcompinit
@@ -113,7 +120,7 @@ export DIRENV_LOG_FORMAT=
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/keunbae/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/keunbae/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -125,4 +132,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
