@@ -80,7 +80,7 @@ pr() {
       # gh pr create --title "$branch_name" --assignee @me,dannyyassine-ce --web --base "$base"
     else
       echo "We need bitbucket url"
-      # open https://bitbucket.org/inagene/"$dir"/pull-requests/new\?source="$base"\&t=1
+      # open https://bitbucket.org/inagene/"$dir"/pull-requests/new\?source="$branch_name"\&t=1
     fi
 
     return
