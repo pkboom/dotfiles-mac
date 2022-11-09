@@ -74,7 +74,7 @@ pr() {
     echo
 
     if [[ $remote =~ 'github' ]]; then
-      gh pr create --title "$branch_name" --assignee @me,thenu-ce --web --base "$base"
+      gh pr create --title "$branch_name" --assignee @me,craigmcfarlaneCE --web --base "$base"
       # gh pr create --title "$branch_name" --assignee @me,dannyyassine-ce --web --base "$base"
     else
       echo "We need bitbucket url"
