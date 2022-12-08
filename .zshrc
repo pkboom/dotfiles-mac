@@ -1,5 +1,5 @@
 # Path to your dotfiles.
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES="$HOME/.dotfiles"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -64,8 +64,6 @@ HIST_STAMPS="dd/mm/yyyy"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$DOTFILES
 
-plugins=(clearestate)
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -111,24 +109,3 @@ compdef _git pr=git-branch
 # terraform
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
-
-# clear estate
-plugins=(nix-shell)
-
-eval "$(direnv hook zsh)"
-export DIRENV_LOG_FORMAT=
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/keunbae/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/keunbae/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/keunbae/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/keunbae/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
