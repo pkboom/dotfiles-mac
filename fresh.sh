@@ -35,7 +35,7 @@ composer global require laravel/installer laravel/valet spatie/visit
 $HOME/.composer/vendor/bin/valet install
 
 # Create code subdirectories
-mkdir $HOME/code/packages
+mkdir -p $HOME/code/packages
 
 # Clone Github repositories
 $DOTFILES/scripts/clone.sh
