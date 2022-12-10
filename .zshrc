@@ -1,5 +1,5 @@
 # Path to your dotfiles.
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES=$HOME/.dotfiles
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -7,6 +7,15 @@ export DOTFILES="$HOME/.dotfiles"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Minimal - Theme Settings
+# export MNML_INSERT_CHAR="$"
+# export MNML_PROMPT=(mnml_git mnml_keymap)
+# export MNML_RPROMPT=('mnml_cwd 20')
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell2"
 
 # Set list of themes to pick from when loading at random
@@ -64,6 +73,13 @@ HIST_STAMPS="dd/mm/yyyy"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$DOTFILES
 
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+# plugins=(artisan)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -84,7 +100,15 @@ export LANG=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-source $DOTFILES/scripts/aliases.sh
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
 source $DOTFILES/scripts/artisan.sh
 source $DOTFILES/scripts/composer.sh
 source $DOTFILES/scripts/functions.sh
@@ -100,12 +124,9 @@ if [ "code" = "$DIR" ]; then
 fi
 
 # https://zsh.sourceforge.io/Doc/Release/Completion-System.html#Functions-3
-# The first form defines the function to call for completion.
-# Alternatively, all the arguments may have the form ‘cmd=service’.
+# The first argument(_git) defines the function to call for completion.
+# All the arguments may have the form ‘cmd=service’.
 # The argument for cmd will be completed in the same way as service.
-# This is for pr() so that I can do 'pr submit <tab>'
+# This is for function `pr` to have the same auto-completion as git-branch
+# when I do 'pr submit <tab>'
 compdef _git pr=git-branch
-
-# terraform
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform

@@ -22,10 +22,10 @@ done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "MacBook Keunbae"
-sudo scutil --set HostName "MacBook Keunbae"
-sudo scutil --set LocalHostName "MacBook Keunbae"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MacBook Keunbae"
+sudo scutil --set ComputerName "MacBook Dries"
+sudo scutil --set HostName "MacBook Dries"
+sudo scutil --set LocalHostName "MacBook Dries"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MacBook Dries"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -172,7 +172,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "America/Toronto" >/dev/null
+sudo systemsetup -settimezone "Europe/Brussels" >/dev/null
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
