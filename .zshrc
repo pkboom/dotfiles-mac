@@ -109,6 +109,8 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+source $DOTFILES/path.sh
+source $DOTFILES/aliases.zsh
 source $DOTFILES/scripts/artisan.sh
 source $DOTFILES/scripts/composer.sh
 source $DOTFILES/scripts/functions.sh
