@@ -89,7 +89,10 @@ mas 'Numbers', id: 409203825
 mas 'Speedtest', id: 1153157709
 mas 'Things', id: 904280696
 mas 'Tweetbot', id: 1384080005
+
+# My own brew installations
 brew 'legit'
 cask 'alfred'
 cask 'vlc'
 mas 'Spark', id: 1176895641
+brew install --cask rapidapi
