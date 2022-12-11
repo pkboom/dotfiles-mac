@@ -203,8 +203,14 @@ myip() {
     curl -s https://ipecho.net/plain | tee /dev/tty | xclip -sel clip
 }
 
-clear-hot() {
-    kill "$(lsof -i:8080 | tail -n 1 | awk '{print $2}')"
+clear-port() {
+    if [ -z "$1" ]; then
+        port=8080
+    else
+        port=$1
+    fi
+
+    kill "$(lsof -i:$port | tail -n 1 | awk '{print $2}')"
 
     # lsof -i -P -n | grep LISTEN | grep 80
     # -P: inhibits the conversion of port numbers to port names for network files.
