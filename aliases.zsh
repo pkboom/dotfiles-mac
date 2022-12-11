@@ -34,3 +34,6 @@ alias nah="git reset --hard && git clean -df"
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias mix='npx mix'
+
+# Docker
+alias dc="docker compose"
