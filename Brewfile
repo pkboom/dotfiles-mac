@@ -96,3 +96,4 @@ cask 'alfred'
 cask 'vlc'
 mas 'Spark', id: 1176895641
 brew install --cask rapidapi
+brew install wget
