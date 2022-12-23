@@ -54,3 +54,5 @@ $DOTFILES/link.sh
 
 # Install xdebug
 pecl install xdebug
+iniFileLocation=$(php --ini | grep '/php.ini' | cut -f2 -d: | sed 's/ //g')
+sudo sed -i -e 's/^zend_extension="xdebug.so"/zend_extension="xdebug.so"\nxdebug.mode=debug\nxdebug.start_with_request=yes/' "$iniFileLocation"
