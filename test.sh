@@ -1,5 +1,9 @@
-#!/bin/sh
+#!/bin/zsh
 
-cd ~
+iniFileLocation=$(php --ini | grep '/php.ini' | cut -f2 -d: | sed 's/ //g')
+# package=$(echo "$1" | cut -d/ -f2- | sed 's/\.git//')
+echo $iniFileLocation
 
-pwd
+currentLine=$(grep xdebug.so "$iniFileLocation")
+
+echo $currentLine

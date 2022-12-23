@@ -60,15 +60,15 @@ xdebug() {
     # equivalent to -n in bash
     # read -k 1 -r "?Is php 8.1 and is xdebug /usr/lib/php/20210902/xdebug.so? "
 
-    iniFileLocation=$(php --ini | grep xdebug | sed 's/,//')
+    iniFileLocation=$(php --ini | grep '/php.ini' | cut -f2 -d: | sed 's/ //g')
 
     currentLine=$(grep xdebug.so "$iniFileLocation")
 
     if [ -z "$currentLine" ]; then
         sudo sh -c "cat << 'EOF' >> $iniFileLocation
 zend_extension=xdebug.so
-xdebug.mode = debug
-xdebug.start_with_request = yes
+xdebug.mode=debug
+xdebug.start_with_request=yes
 EOF"
 
         echo "xdebug is now active"

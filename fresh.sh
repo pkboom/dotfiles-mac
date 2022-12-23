@@ -51,3 +51,6 @@ ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 source $DOTFILES/.macos
 
 $DOTFILES/link.sh
+
+# Install xdebug
+pecl install xdebug
