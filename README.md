@@ -40,3 +40,7 @@ mackup restore
 ### iCloud settings
 
 System Prefrences > iCloud > iCloud Drive ( Options ) > uncheck apps (that I don't use)
+
+### Disable cmd + m
+
+https://apple.stackexchange.com/a/125628

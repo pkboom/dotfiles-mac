@@ -133,6 +133,8 @@ fi
 # when I do 'pr submit <tab>'
 compdef _git pr=git-branch
 
+#return 0 #anaconda running ? go : exit
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
