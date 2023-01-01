@@ -45,14 +45,6 @@ watch() {
     fi
 }
 
-hot() {
-    if [ -n "$1" ]; then
-        cd "$1" && npx mix watch --hot
-    else
-        npx mix watch --hot
-    fi
-}
-
 xdebug() {
     # Anything after a ? in the first argument is used as the prompt string in zsh
     # equivalent to -p in bash
@@ -226,4 +218,8 @@ page() {
     DIR=${PWD##*/}
 
     open http://"$DIR".test
+}
+
+create-deploy() {
+    wget --directory-prefix ./.github/workflows https://raw.githubusercontent.com/pkboom/import/master/deploy.yml
 }
