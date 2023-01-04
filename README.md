@@ -44,3 +44,18 @@ System Prefrences > iCloud > iCloud Drive ( Options ) > uncheck apps (that I don
 ### Disable cmd + m
 
 https://apple.stackexchange.com/a/125628
+
+### Add keunbae to sudoers
+
+```sh
+sudo -i
+# sudo -i runs a shell with root privileges and gives you the root environment, i.e. your ~/.bashrc is ignored.
+# It acquires the root user's environment.
+
+echo 'keunbae ALL=(ALL) NOPASSWD: ALL' >/etc/sudoers.d/keunbae
+```
+
+- keunbae ALL=(ALL:ALL) NOPASSWD: ALL - The first “ALL” indicates that this rule applies to all hosts.
+- keunbae ALL=(ALL:ALL) NOPASSWD: ALL - The second “ALL” indicates that keunbae can run commands as all users.
+- keunbae ALL=(ALL:ALL) NOPASSWD: ALL - The third “ALL” indicates that keunbae can run commands as all groups.
+- keunbae ALL=(ALL:ALL) NOPASSWD: ALL - The last “ALL” indicates these rules apply to all commands.
