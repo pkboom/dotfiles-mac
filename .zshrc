@@ -133,7 +133,7 @@ fi
 # when I do 'pr submit <tab>'
 compdef _git pr=git-branch
 
-return 0 #anaconda running ? go : exit
+#return 0 #anaconda running ? go : exit
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
