@@ -18,6 +18,14 @@ formatting() {
   fi
 }
 
+refactoring() {
+  if [ "$1" = "up" ]; then
+    git add . && git commit -m 'refactoring' && git push
+  else
+    git add . && git commit -m 'refactoring'
+  fi
+}
+
 up() {
   if [ -z "$*" ]; then
     step=1
