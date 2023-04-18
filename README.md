@@ -59,3 +59,11 @@ echo 'keunbae ALL=(ALL) NOPASSWD: ALL' >/etc/sudoers.d/keunbae
 - keunbae ALL=(ALL:ALL) NOPASSWD: ALL - The second “ALL” indicates that keunbae can run commands as all users.
 - keunbae ALL=(ALL:ALL) NOPASSWD: ALL - The third “ALL” indicates that keunbae can run commands as all groups.
 - keunbae ALL=(ALL:ALL) NOPASSWD: ALL - The last “ALL” indicates these rules apply to all commands.
+
+### Symlink python
+
+```sh
+ln -s /opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3 /opt/homebrew/bin/python
+```
+
+> Note the version. Change it if necessary.
