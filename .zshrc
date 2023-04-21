@@ -151,5 +151,3 @@ if [ "$conda" = true ]; then
     unset __conda_setup
     # <<< conda initialize <<<
 fi
-
-export PATH="$HOME/Library/Android/sdk/emulator:$PATH"

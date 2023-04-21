@@ -1,18 +1,13 @@
-# Load dotfiles binaries
-export PATH="$DOTFILES/bin:$PATH"
-
 # Load Composer tools
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH=$PATH:$HOME/.composer/vendor/bin
 
 # Load Node global installed binaries
-export PATH="$HOME/.node/bin:$PATH"
+export PATH=$PATH:$HOME/.node/bin
 
 # Use project specific binaries before global ones
-export PATH="node_modules/.bin:vendor/bin:$PATH"
+export PATH=$PATH:node_modules/.bin:vendor/bin
 
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH=$PATH:/opt/homebrew/opt/mysql-client/bin
 
-# Make sure coreutils are loaded before system commands
-# I've disabled this for now because I only use "ls" which is
-# referenced in my aliases.zsh file directly.
-#export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+# Android
+export PATH=$PATH:~/Library/Android/sdk/emulator
