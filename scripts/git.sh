@@ -6,13 +6,9 @@ wip() {
   fi
 }
 
-grd() {
-  git rebase develop
-}
-
 formatting() {
   if [ "$1" = "up" ]; then
-    git add . && git commit -m 'formatting' && git push
+    git add . && git commit -m 'formatting' && git push -f
   else
     git add . && git commit -m 'formatting'
   fi
@@ -20,10 +16,14 @@ formatting() {
 
 refactoring() {
   if [ "$1" = "up" ]; then
-    git add . && git commit -m 'refactoring' && git push
+    git add . && git commit -m 'refactoring' && git push -f
   else
     git add . && git commit -m 'refactoring'
   fi
+}
+
+grd() {
+  git rebase develop
 }
 
 up() {
