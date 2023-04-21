@@ -1,14 +1,13 @@
 # Load Composer tools
-export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Load Node global installed binaries
-export PATH=$PATH:$HOME/.node/bin
+export PATH="$HOME/.node/bin:$PATH"
 
 # Use project specific binaries before global ones
-export PATH=$PATH:node_modules/.bin:vendor/bin
+export PATH="node_modules/.bin:vendor/bin:$PATH"
 
-export PATH=$PATH:/opt/homebrew/opt/mysql-client/bin
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # Android
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
