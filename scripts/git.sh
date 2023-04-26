@@ -22,10 +22,6 @@ refactoring() {
   fi
 }
 
-grd() {
-  git rebase develop
-}
-
 up() {
   if [ -z "$*" ]; then
     step=1
