@@ -69,7 +69,7 @@ pr() {
 
   if [ "$1" = "submit" ]; then
     if [ -z "$2" ]; then
-      base="develop"
+      base="main"
     else
       base="$2"
     fi
@@ -78,8 +78,8 @@ pr() {
     echo
 
     if [[ $remote =~ 'github' ]]; then
-      gh pr create --title "$branch_name" --assignee @me,craigmcfarlaneCE --web --base "$base"
-      # gh pr create --title "$branch_name" --assignee @me,dannyyassine-ce --web --base "$base"
+      gh pr create --title "$branch_name" --assignee @me --web --base "$base"
+      # gh pr create --title "$branch_name" --assignee @me --web --base "$base"
     else
       echo "We need bitbucket url"
       # open https://bitbucket.org/inagene/"$dir"/pull-requests/new\?source="$branch_name"\&t=1
@@ -94,7 +94,7 @@ pr() {
     return
   fi
 
-  if [[ $remote =~ 'clearestate' ]]; then
+  if [[ $remote =~ 'github' ]]; then
     gh pr view --web
   elif [[ $remote =~ 'bitbucket' ]]; then
     open https://bitbucket.org/"$username"/"$repository"/src/develop
