@@ -116,7 +116,7 @@ source $DOTFILES/scripts/composer.sh
 source $DOTFILES/scripts/functions.sh
 source $DOTFILES/scripts/git.sh
 
-# Disable annoying confirm “zsh: sure you want to delete all the files”
+# Disable confirming “zsh: sure you want to delete all the files” when using `rm *`
 setopt rmstarsilent
 
 DIR=${PWD##*/}
