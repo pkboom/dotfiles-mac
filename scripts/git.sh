@@ -1,6 +1,6 @@
 wip() {
   if [ "$1" = "up" ]; then
-    git add . && git commit -m 'wip' && git push -f
+    git add . && git commit -m 'wip' && git push
   else
     git add . && git commit -m 'wip'
   fi
@@ -8,7 +8,7 @@ wip() {
 
 formatting() {
   if [ "$1" = "up" ]; then
-    git add . && git commit -m 'formatting' && git push -f
+    git add . && git commit -m 'formatting' && git push
   else
     git add . && git commit -m 'formatting'
   fi
@@ -16,7 +16,7 @@ formatting() {
 
 refactoring() {
   if [ "$1" = "up" ]; then
-    git add . && git commit -m 'refactoring' && git push -f
+    git add . && git commit -m 'refactoring' && git push
   else
     git add . && git commit -m 'refactoring'
   fi
