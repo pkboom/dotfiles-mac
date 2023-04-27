@@ -67,3 +67,7 @@ ln -s /opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3 /opt/homebrew/bin/pyth
 ```
 
 > Note the version. Change it if necessary.
+
+### Easy move and resize setup
+
+<img src="/images/easymove.png" width="400">
