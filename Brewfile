@@ -9,13 +9,11 @@ tap 'stripe/stripe-cli'
 # Binaries
 brew 'awscli'
 brew 'bash' # Latest Bash version
-brew 'bat' # Used for spatie/visit
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'ffmpeg'
 brew 'gh'
 brew 'git'
 brew 'grep'
-brew 'httpie'
 brew 'jq' # Used for spatie/visit
 brew 'mackup'
 brew 'mas' # Mac App Store manager
@@ -30,7 +28,6 @@ brew 'php@8.1'
 brew 'php@7.4'
 brew 'composer'
 brew 'imagemagick'
-brew 'meilisearch'
 brew 'mysql'
 brew 'nginx'
 brew 'node'
@@ -38,39 +35,14 @@ brew 'redis'
 brew 'yarn'
 
 # Apps
-cask '1password'
-cask 'caffeine'
 cask 'dbngin'
-cask 'discord'
-cask 'docker'
-cask 'figma'
 cask 'firefox'
-cask 'github'
 cask 'google-chrome'
-cask 'helo'
 cask 'imageoptim'
-cask 'insomnia'
-cask 'pastebot'
-cask 'phpmon'
-cask 'ray'
-cask 'readdle-spark'
-cask 'screenflow'
 cask 'slack'
 cask 'tableplus'
-cask 'telegram-desktop'
-cask 'the-unarchiver'
-cask 'tinkerwell'
-cask 'transmit'
-cask 'tunnelbear'
-cask 'tuple'
 cask 'visual-studio-code'
-cask 'whatsapp'
 cask 'zoom'
-cask 'zwift'
-
-# Quicklook
-cask 'qlmarkdown'
-cask 'quicklook-json'
 
 # Fonts
 cask 'font-lato'
@@ -92,8 +64,8 @@ mas 'Tweetbot', id: 1384080005
 
 # My own brew installations
 brew 'legit'
+brew install wget
 cask 'alfred'
 cask 'vlc'
+cask 'easy-move-plus-resize'
 mas 'Spark', id: 1176895641
-brew install --cask rapidapi
-brew install wget
