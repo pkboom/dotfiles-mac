@@ -11,10 +11,16 @@ ssh-keygen -t ed25519 -C $1 -f ~/.ssh/id_ed25519
 eval "$(ssh-agent -s)"
 
 touch ~/.ssh/config
+
 echo "Host *\n  AddKeysToAgent yes\n  IdentityFile ~/.ssh/id_ed25519" | tee ~/.ssh/config
 
 ssh-add ~/.ssh/id_ed25519
 
 # Adding your SSH key to your GitHub account
 # https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
-echo "run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into GitHub"
+echo "'pbcopy < ~/.ssh/id_ed25519.pub' was run so go paste that into GitHub Settings"
+
+pbcopy <~/.ssh/id_ed25519.pub
+
+echo
+echo "Go to 'https://github.com/settings/profile'"
