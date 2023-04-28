@@ -17,7 +17,7 @@ alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
 
 # Git
 alias gp="git push"
-alias gpf="git push -f"
+alias gpd="git push origin --delete"
 alias gs="git status"
 alias gc="git commit -m"
 alias gca="git commit -a -m"
