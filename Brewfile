@@ -65,6 +65,7 @@ mas 'Tweetbot', id: 1384080005
 # My own brew installations
 brew 'legit'
 brew install wget
+cask iterm2
 cask 'alfred'
 cask 'vlc'
 cask 'easy-move-plus-resize'

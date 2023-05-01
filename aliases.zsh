@@ -25,7 +25,6 @@ alias ga="git add ."
 alias gl='git log --decorate --oneline --graph --all'
 alias gch='git checkout'
 alias gchd='git checkout develop'
-alias gb="git branch"
 alias gbd="git branch -D"
 alias gr="git rebase"
 alias gt="git tag"
