@@ -105,11 +105,12 @@ repo() {
   remote=$(git config --get remote.origin.url)
   username=$(echo "$remote" | cut -d: -f2 | sed 's/\/.*//')
   repository=$(echo "$remote" | cut -d/ -f2 | sed 's/\.git//')
+  branch_name=$(git rev-parse --abbrev-ref HEAD)
 
   if [[ $remote =~ 'bitbucket' ]]; then
     open https://bitbucket.org/"$username"/"$repository"/src/develop
   else
-    open https://github.com/"$username"/"$repository"
+    open https://github.com/"$username"/"$repository"/tree/"$branch_name"
   fi
 }
 

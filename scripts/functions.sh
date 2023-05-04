@@ -223,3 +223,41 @@ page() {
 create-deploy() {
     wget --directory-prefix ./.github/workflows https://raw.githubusercontent.com/pkboom/import/master/deploy.yml
 }
+
+gh_list() {
+    GREEN='\033[1;32m'
+    NC='\033[0m' # No Color
+
+    echo "gh repo delete"
+    echo "${GREEN}➜${NC} delete current repo"
+    echo
+    echo "gh repo delete <repo>"
+    echo "${GREEN}➜${NC} delete <repo>"
+    echo
+    echo "gh repo edit --visibility public"
+    echo "${GREEN}➜${NC} make current repo public"
+    echo
+    echo "gh repo edit --visibility private"
+    echo "${GREEN}➜${NC} make current repo private"
+    echo
+    echo "gh repo rename new_name"
+    echo "${GREEN}➜${NC} rename current repo"
+    echo
+    echo "gh workflow run <workflow.yml>"
+    echo "${GREEN}➜${NC} run workflow"
+    echo
+    echo "gh run list --workflow=<workflow.yml> --limit 1 --json status"
+    echo "${GREEN}➜${NC} get workflow status"
+    echo
+    echo "gh repo set-default"
+    echo "${GREEN}➜${NC} set current repo as default"
+    echo
+    echo "gh secret set SSH_PRIVATE < ~/.ssh/id_ed25519"
+    echo "${GREEN}➜${NC} set actions secret SSH_PRIVATE for current repo"
+    echo
+    echo "gh ssh-key add ~/.ssh/id_ed25519.pub --title <title>"
+    echo "${GREEN}➜${NC} add ssh key to github"
+    echo
+    echo "gh auth login"
+    echo "${GREEN}➜${NC} login to github"
+}
