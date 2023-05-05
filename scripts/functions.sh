@@ -260,4 +260,9 @@ gh_list() {
     echo
     echo "gh auth login"
     echo "${GREEN}➜${NC} login to github"
+    echo
+    echo "gh"
+    echo "${GREEN}➜${NC} show all commands"
+    echo
+    echo "Go to ${GREEN}https://cli.github.com/manual/examples${NC} for more info."
 }
