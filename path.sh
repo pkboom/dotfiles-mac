@@ -7,7 +7,7 @@ export PATH="$HOME/.node/bin:$PATH"
 # Use project specific binaries before global ones
 export PATH="node_modules/.bin:vendor/bin:$PATH"
 
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+# export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
-# Android
+# Use emulator for Android
 export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
