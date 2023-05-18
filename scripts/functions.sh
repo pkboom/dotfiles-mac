@@ -266,3 +266,14 @@ gh_list() {
     echo
     echo "Go to ${GREEN}https://cli.github.com/manual/examples${NC} for more info."
 }
+
+ansible_list() {
+    echo "ansible-config init --disabled > ansible.cfg"
+    echo "ansible-inventory -i setup/inventory --list"
+    echo "ansible all -i setup/inventory -m ping"
+    echo "ansible all -i setup/inventory -m copy -a 'src=./ssh2.sh dest=~/.ssh'"
+    echo "ansible-playbook -i setup/inventory setup/ansible/ci.yml"
+    echo "ansible-playbook -i setup/inventory setup/ansible/ci.yml --limit windows"
+    echo "ansible-playbook -i setup/inventory setup/ansible/ci.yml --extra-vars roles=dispatch "
+    echo "ansible-playbook -i setup/inventory setup/ansible/operation.yml --tags='pm2_list,result'"
+}

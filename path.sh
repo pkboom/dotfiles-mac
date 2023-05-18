@@ -11,3 +11,4 @@ export PATH="node_modules/.bin:vendor/bin:$PATH"
 
 # Use emulator for Android
 export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
