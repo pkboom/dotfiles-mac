@@ -44,3 +44,4 @@ jsconfig.json
 check.json
 urls.json
 /.support
+/.logs
