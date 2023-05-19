@@ -275,5 +275,5 @@ ansible_list() {
     echo "ansible-playbook -i setup/inventory setup/ansible/ci.yml"
     echo "ansible-playbook -i setup/inventory setup/ansible/ci.yml --limit windows"
     echo "ansible-playbook -i setup/inventory setup/ansible/ci.yml --extra-vars roles=dispatch "
-    echo "ansible-playbook -i setup/inventory setup/ansible/operation.yml --tags='pm2_list,result'"
+    echo "ansible-playbook -i setup/inventory setup/ansible/actions.yml --tags='pm2_list,always'"
 }
