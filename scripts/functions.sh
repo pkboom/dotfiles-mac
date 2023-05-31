@@ -276,4 +276,5 @@ ansible_list() {
     echo "ansible-playbook -i setup/inventory setup/ansible/ci.yml --limit windows"
     echo "ansible-playbook -i setup/inventory setup/ansible/ci.yml --extra-vars roles=dispatch "
     echo "ansible-playbook -i setup/inventory setup/ansible/actions.yml --tags='pm2_list,always'"
+    echo "ansible-playbook -i setup/inventory_temp setup/ansible/actions.yml -e 'actions=change_env'"
 }
