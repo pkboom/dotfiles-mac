@@ -7,7 +7,8 @@ export PATH="$HOME/.node/bin:$PATH"
 # Use project specific binaries before global ones
 export PATH="node_modules/.bin:vendor/bin:$PATH"
 
-# export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+# Use mysql
+export PATH=/Users/Shared/DBngin/mysql/8.0.27/bin:$PATH
 
 # Use emulator for Android
 export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
