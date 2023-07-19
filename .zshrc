@@ -133,6 +133,20 @@ fi
 # when I do 'pr submit <tab>'
 compdef _git pr=git-branch
 
+#######################
+#   Android + Appium  #
+#######################
+export JAVA_HOME=$(/usr/libexec/java_home)
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+
+export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+
+############
+#   conda  #
+############
+
 conda=false
 
 if [ "$conda" = true ]; then
