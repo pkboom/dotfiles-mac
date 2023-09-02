@@ -224,7 +224,7 @@ create-deploy() {
     wget --directory-prefix ./.github/workflows https://raw.githubusercontent.com/pkboom/import/master/deploy.yml
 }
 
-gh_list() {
+gh_examples() {
     GREEN='\033[1;32m'
     NC='\033[0m' # No Color
 
