@@ -195,7 +195,7 @@ myip() {
     curl -s https://ipecho.net/plain | tee /dev/tty | xclip -sel clip
 }
 
-clear-port() {
+clear_port() {
     if [ -z "$1" ]; then
         port=8080
     else
