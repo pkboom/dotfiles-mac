@@ -67,9 +67,11 @@ pr() {
   repository=$(echo "$remote" | cut -d/ -f2 | sed 's/\.git//')
   branch_name=$(git rev-parse --abbrev-ref HEAD)
 
+  # pr submit
   if [ "$1" = "submit" ]; then
     if [ -z "$2" ]; then
-      base="main"
+      # base="main"
+      base="develop"
     else
       base="$2"
     fi
@@ -88,6 +90,7 @@ pr() {
     return
   fi
 
+  # pr list
   if [ "$1" = "list" ]; then
     gh pr list --assignee pkboom --web
 
