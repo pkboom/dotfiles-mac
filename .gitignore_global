@@ -49,3 +49,4 @@ docker-compose.yml
 /public/mix-manifest.json
 /public/css
 /public/js
+/public/vendor
