@@ -45,8 +45,9 @@ urls.json
 /.support
 
 #InboxMonster
-docker-compose.yml
 /public/mix-manifest.json
 /public/css
 /public/js
 /public/vendor
+docker-compose.yml
+.php-cs-fixer.dist.php
