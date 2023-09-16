@@ -93,7 +93,7 @@ Schedule
 0 21 * * * sh /Users/keunbae/.dotfiles/cron/emptyPhpFpmLog.sh
 
 # Every hour
-0 * * * * cd /Users/keunbae/code/rendering-ios/dev && /opt/homebrew/bin/node someCommand.js
+0 * * * * cd /Users/keunbae/code/rendering-ios/dev && /opt/homebrew/bin/node pingServersCommand.js
 ```
 
 ```sh
