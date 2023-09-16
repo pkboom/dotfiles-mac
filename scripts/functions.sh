@@ -25,7 +25,7 @@ clone_package() {
     fi
 }
 
-web() {
+dev() {
     cd "$HOME"/code && ls
 }
 
