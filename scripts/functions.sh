@@ -29,7 +29,7 @@ web() {
     cd "$HOME"/code && ls
 }
 
-dev() {
+ndev() {
     if [ -n "$1" ]; then
         cd "$1" && npm run dev
     else
