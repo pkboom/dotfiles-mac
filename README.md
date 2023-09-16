@@ -89,5 +89,14 @@ crontab -e
 Schedule
 
 ```
+# at 9 pm every night
 0 21 * * * sh /Users/keunbae/.dotfiles/cron/emptyPhpFpmLog.sh
+
+# Every hour
+0 * * * * cd /Users/keunbae/code/rendering-ios/dev && /opt/homebrew/bin/node someCommand.js
+```
+
+```sh
+which node
+# /opt/homebrew/bin/node
 ```
