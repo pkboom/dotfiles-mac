@@ -119,6 +119,7 @@ source $DOTFILES/scripts/git.sh
 # Disable confirming “zsh: sure you want to delete all the files” when using `rm *`
 setopt rmstarsilent
 
+# Show directories if it's code directory.
 DIR=${PWD##*/}
 
 if [ "code" = "$DIR" ]; then
