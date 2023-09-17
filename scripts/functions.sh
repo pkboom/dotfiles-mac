@@ -25,11 +25,11 @@ clone_package() {
     fi
 }
 
-dev() {
+co() {
     cd "$HOME"/code && ls
 }
 
-ndev() {
+dev() {
     if [ -n "$1" ]; then
         cd "$1" && npm run dev
     else
