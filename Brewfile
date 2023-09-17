@@ -22,7 +22,7 @@ brew 'stripe/stripe-cli/stripe'
 brew 'stripe/stripe-mock/stripe-mock'
 brew 'svn'
 brew 'ansible'
-brew 'top'
+brew 'htop'
 
 # Development
 brew 'php'
