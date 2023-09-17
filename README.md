@@ -82,6 +82,8 @@ ln -s /opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3 /opt/homebrew/bin/pyth
 
 ### Cron
 
+> https://www.geekbitzone.com/posts/macos/crontab/macos-schedule-tasks-with-crontab/
+
 ```sh
 crontab -e
 ```
