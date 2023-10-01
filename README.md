@@ -92,10 +92,14 @@ Schedule
 
 ```
 # at 9 pm every night
-0 21 * * * sh /Users/keunbae/.dotfiles/cron/emptyPhpFpmLog.sh
+0 21 * * * sh /Users/keunbae/.dotfiles/cron/emptyPhpFpmLog.sh > /dev/null 2>&1
 
 # Every hour
-0 * * * * cd /Users/keunbae/code/rendering-ios/dev && /opt/homebrew/bin/node pingServersCommand.js
+0 * * * * cd /Users/keunbae/code/rendering-ios/dev && /opt/homebrew/bin/node pingServersCommand.js > /dev/null 2>&1
+
+# Log
+0 * * * * cd /Users/keunbae/code/rendering-ios/dev && /opt/homebrew/bin/node pingServersCommand.js >> /Users/keunbae/code/cron.log 2>&1
+
 ```
 
 ```sh
