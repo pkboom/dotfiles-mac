@@ -24,8 +24,8 @@ required = true
 # https://jeffkreeftmeijer.com/git-git/
 forget="! git fetch --prune && git branch -vv | awk '/: gone]/ {print $1}' | xargs git branch -D"
 # update="! BRANCH=${1:-develop}; git stash -u; git checkout $BRANCH && git pull && git checkout - && git rebase $BRANCH && git stash pop"
-# new="! git init -q && git add . && git commit -q -m 'init' && gh repo create ${PWD##*/} --private -s=. -r=origin && git push -u origin master"
-new="! gh repo create ${PWD##*/} --private -s=. -r=origin && git push -u origin master && echo 'haha'"
+new-private="! git init -q && git add . && git commit -q -m 'init' && gh repo create ${PWD##*/} --private -s=. -r=origin && git push -u origin master"
+new-public="! git init -q && git add . && git commit -q -m 'init' && gh repo create ${PWD##*/} --public -s=. -r=origin && git push -u origin master"
 
 # With the `[includeIf]` directive you can specify a directory
 # and a specific git config that should be loaded.
