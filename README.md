@@ -80,6 +80,12 @@ ln -s /opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3 /opt/homebrew/bin/pyth
 
 <img src="/images/dbngin2.png">
 
+### Download terminal fondt
+
+https://www.jetbrains.com/lp/mono/
+
+Open `Font Book` and drag the unzipped font folder.
+
 ### Cron
 
 > https://www.geekbitzone.com/posts/macos/crontab/macos-schedule-tasks-with-crontab/

@@ -1,3 +1,9 @@
 #!/bin/bash
 
-sed -i "" -e 's/packagist.org/packagist_fake.org/' composer.json
+result=$(conda config --show auto_activate_base)
+
+if [ "$result" = "auto_activate_base: True" ]; then
+  conda config --set auto_activate_base false
+else
+  conda config --set auto_activate_base true
+fi
