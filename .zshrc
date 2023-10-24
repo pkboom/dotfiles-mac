@@ -149,7 +149,7 @@ export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 #   conda  #
 ############
 
-conda=false
+conda=true
 
 if [ "$conda" = true ]; then
     # >>> conda initialize >>>
