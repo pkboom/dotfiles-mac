@@ -1,9 +1,6 @@
 #!/bin/bash
 
-result=$(conda config --show auto_activate_base)
-
-if [ "$result" = "auto_activate_base: True" ]; then
-  conda config --set auto_activate_base false
-else
-  conda config --set auto_activate_base true
-fi
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
