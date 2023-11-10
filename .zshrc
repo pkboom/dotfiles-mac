@@ -147,6 +147,16 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
+##### nvm #####
+
+nvm=true
+
+if [ "$nvm" = true ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
+    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+fi
+
 ############
 #   conda  #
 ############
