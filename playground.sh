@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+aws_line="inbox_monster_prod"
+
+sed -i "" -e "s/^export AWS_PROFILE.*/export AWS_PROFILE=$aws_line/" /Users/keunbae/.dotfiles/.zshrc
