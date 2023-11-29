@@ -1,5 +1,4 @@
 #!/bin/bash
 
-aws_line="inbox_monster_prod"
-
-sed -i "" -e "s/^export AWS_PROFILE.*/export AWS_PROFILE=$aws_line/" /Users/keunbae/.dotfiles/.zshrc
+echo "When node 22(even number: Active LTS) is release, change 'node@20' to 'node' in Brewfile."
+read -rp "Press enter to continue."

@@ -149,6 +149,10 @@ export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
 export AWS_PROFILE=inbox_monster_dev
 
+##### node 20  #####
+# when node 22 is release, we can remove this
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
+
 ##### conda  #####
 
 conda=false
