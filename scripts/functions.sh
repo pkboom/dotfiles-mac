@@ -68,14 +68,14 @@ EOF"
     fi
 
     if [[ $currentLine =~ ^#zend_extension ]]; then
-        sudo sed -i -e 's/^#zend_extension/zend_extension/g' "$iniFileLocation"
-        sudo sed -i -e 's/^#xdebug.mode/xdebug.mode/g' "$iniFileLocation"
-        sudo sed -i -e 's/^#xdebug.start_with_request/xdebug.start_with_request/g' "$iniFileLocation"
+        sudo sed -i '' -e 's/^#zend_extension/zend_extension/g' "$iniFileLocation"
+        sudo sed -i '' -e 's/^#xdebug.mode/xdebug.mode/g' "$iniFileLocation"
+        sudo sed -i '' -e 's/^#xdebug.start_with_request/xdebug.start_with_request/g' "$iniFileLocation"
         echo "xdebug is now active"
     else
-        sudo sed -i -e 's/^zend_extension/#zend_extension/g' "$iniFileLocation"
-        sudo sed -i -e 's/^xdebug.mode/#xdebug.mode/g' "$iniFileLocation"
-        sudo sed -i -e 's/^xdebug.start_with_request/#xdebug.start_with_request/g' "$iniFileLocation"
+        sudo sed -i '' -e 's/^zend_extension/#zend_extension/g' "$iniFileLocation"
+        sudo sed -i '' -e 's/^xdebug.mode/#xdebug.mode/g' "$iniFileLocation"
+        sudo sed -i '' -e 's/^xdebug.start_with_request/#xdebug.start_with_request/g' "$iniFileLocation"
         echo "xdebug is now inactive"
     fi
 
