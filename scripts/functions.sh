@@ -278,3 +278,7 @@ ansible_list() {
     echo "ansible-playbook -i setup/inventory setup/ansible/actions.yml --tags='pm2_list,always'"
     echo "ansible-playbook -i setup/inventory_temp setup/ansible/actions.yml -e 'actions=change_env'"
 }
+
+qbrew() {
+    HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1 HOMEBREW_NO_INSTALL_CLEANUP=1 HOMEBREW_NO_INSTALL_UPGRADE=1 brew $@
+}

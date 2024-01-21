@@ -101,14 +101,23 @@ Schedule
 0 21 * * * sh /Users/keunbae/.dotfiles/cron/emptyPhpFpmLog.sh > /dev/null 2>&1
 
 # Every hour
-0 * * * * cd /Users/keunbae/code/rendering-ios/dev && /opt/homebrew/bin/node pingServersCommand.js > /dev/null 2>&1
+0 * * * * cd /Users/keunbae/code/rendering-ios && /opt/homebrew/opt/node@20/bin/node dev/pingServersCommand.js --mail > /dev/null 2>&1
+
+*/20 * * * * cd /Users/keunbae/code/rendering-ios && /opt/homebrew/opt/node@20/bin/node dev/getQueueAttributeCommand.js --profile inboxmonster_prod --mail > /dev/null 2>&1
 
 # Log
 0 * * * * cd /Users/keunbae/code/rendering-ios/dev && /opt/homebrew/bin/node pingServersCommand.js >> /Users/keunbae/code/cron.log 2>&1
-
 ```
 
 ```sh
 which node
 # /opt/homebrew/bin/node
+```
+
+# Brew
+
+Permission
+
+```sh
+sudo chown -R $(whoami) $(brew --prefix)/*
 ```
