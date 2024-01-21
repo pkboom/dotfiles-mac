@@ -146,15 +146,13 @@ export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
 ##### aws cli  #####
-
-export AWS_PROFILE=inbox_monster_dev
+export AWS_PROFILE=inboxmonster_dev
 
 ##### node 20  #####
 # when node 22 is release, we can remove this
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 
 ##### conda  #####
-
 conda=false
 
 if [ "$conda" = true ]; then

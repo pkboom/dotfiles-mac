@@ -26,7 +26,7 @@ clone_package() {
 }
 
 co() {
-    cd "$HOME"/code && ls
+    cd "$HOME"/code && ls -lh --color=auto
 }
 
 dev() {
