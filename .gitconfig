@@ -31,3 +31,5 @@ public="! git init -q && git add . && git commit -q -m 'init' && gh repo create 
 # and a specific git config that should be loaded.
 # [includeIf "gitdir:~/Sites/CustomerA/"]
 # path ="~/.dotfiles/git/.gitconfig_for_customerA"
+[commit]
+	template = /Users/keunbae/.gitmessage
