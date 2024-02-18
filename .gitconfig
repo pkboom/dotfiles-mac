@@ -1,24 +1,31 @@
 [user]
 name = Keunbae Park
 email = pkboom@users.noreply.github.com
+
 [color]
 ui = auto
+
 [merge]
 confilctstyle = diff3
+
 [core]
 editor = vim -f
 excludesfile = /Users/keunbae/.gitignore_global
+
 [credetial]
 helper = cache
+
 [push]
 default = simple
 # git push creates a new branche.
 autosetupremote = true
+
 [filter "lfs"]
 clean = git-lfs clean -- %f
 smudge = git-lfs smudge -- %f
 process = git-lfs filter-process
 required = true
+
 [alias]
 # https://tomschlick.com/2017/03/20/git-forget
 # https://jeffkreeftmeijer.com/git-git/
