@@ -31,5 +31,8 @@ public="! git init -q && git add . && git commit -q -m 'init' && gh repo create 
 # and a specific git config that should be loaded.
 # [includeIf "gitdir:~/Sites/CustomerA/"]
 # path ="~/.dotfiles/git/.gitconfig_for_customerA"
-[commit]
-	template = /Users/keunbae/.gitmessage
+
+# https://cbea.ms/git-commit
+# https://gist.github.com/lisawolderiksen/a7b99d94c92c6671181611be1641c733
+# [commit]
+# 	template = /Users/keunbae/.gitmessage
