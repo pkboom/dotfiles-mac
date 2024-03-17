@@ -1,6 +1,6 @@
 wip() {
   if [ "$1" = "up" ]; then
-    git add . && git commit -m 'wip' && git push
+    git add . && git commit -m 'wip' && git push $2
   else
     git add . && git commit -m 'wip'
   fi
