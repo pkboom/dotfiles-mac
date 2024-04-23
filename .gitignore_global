@@ -40,8 +40,7 @@ Thumbs.db
 
 #Personal
 jsconfig.json
-playground.js
-playground.py
+playground.php
 
 #rendering
 /.support
@@ -51,5 +50,4 @@ playground.py
 /public/css
 /public/js
 /public/vendor
-docker-compose.yml
 .php-cs-fixer.dist.php

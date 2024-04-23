@@ -53,13 +53,6 @@ down() {
   git reset HEAD~"$*"
 }
 
-submit() {
-  repository=$(git remote -v | head -n 1)
-  branch_name=$(git rev-parse --abbrev-ref HEAD)
-
-  return
-}
-
 pr() {
   # dir=${PWD##*/}
   remote=$(git config --get remote.origin.url)

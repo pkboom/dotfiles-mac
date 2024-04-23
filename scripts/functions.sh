@@ -171,6 +171,10 @@ create_autoload_files() {
     composer dump-autoload -d "$PWD"
 }
 
+mkdircode() {
+    mkdir -p "$@" && code "$@" || exit
+}
+
 mkdircd() {
     mkdir -p "$@" && cd "$@" || exit
 }
