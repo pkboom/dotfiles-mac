@@ -145,7 +145,7 @@ export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
 ##### aws cli  #####
-export AWS_PROFILE=inboxmonster_dev
+# export AWS_PROFILE=
 
 ##### conda  #####
 conda=false

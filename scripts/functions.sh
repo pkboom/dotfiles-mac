@@ -146,13 +146,6 @@ import_formats() {
     wget https://raw.githubusercontent.com/pkboom/format/master/.prettierrc
 }
 
-# deprecated
-import_tinker_config() {
-    wget https://raw.githubusercontent.com/pkboom/import/master/tinker.config.php
-
-    echo -e '\nPSYSH_CONFIG=tinker.config.php' >>.env
-}
-
 import_jsconfig() {
     wget https://raw.githubusercontent.com/pkboom/import/master/jsconfig.json
 }
@@ -274,7 +267,7 @@ gh_examples() {
     echo "Go to ${GREEN}https://cli.github.com/manual/examples${NC} for more info."
 }
 
-ansible_list() {
+ansible_example() {
     echo "ansible-config init --disabled > ansible.cfg"
     echo "ansible-inventory -i setup/inventory --list"
     echo "ansible all -i setup/inventory -m ping"
@@ -288,4 +281,8 @@ ansible_list() {
 
 qbrew() {
     HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1 HOMEBREW_NO_INSTALL_CLEANUP=1 HOMEBREW_NO_INSTALL_UPGRADE=1 brew $@
+}
+
+open_iterm() {
+    open -a iTerm $PWD
 }
