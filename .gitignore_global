@@ -44,10 +44,3 @@ playground.php
 
 #rendering
 /.support
-
-#InboxMonster
-/public/mix-manifest.json
-/public/css
-/public/js
-/public/vendor
-.php-cs-fixer.dist.php
