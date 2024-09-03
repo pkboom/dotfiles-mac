@@ -283,6 +283,6 @@ qbrew() {
     HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1 HOMEBREW_NO_INSTALL_CLEANUP=1 HOMEBREW_NO_INSTALL_UPGRADE=1 brew $@
 }
 
-open_iterm() {
+open_iterm2() {
     open -a iTerm $PWD
 }
