@@ -39,6 +39,15 @@ If icloud is synced, run this command to restore configurations.
 mackup restore
 ```
 
+### Mackup issue with Sonoma
+
+https://github.com/lra/mackup?tab=readme-ov-file#warning
+
+```sh
+mackup backup --force && mackup uninstall --force
+mackup restore --force && mackup uninstall --force
+```
+
 ### iCloud settings
 
 System Prefrences > iCloud > iCloud Drive ( Options ) > uncheck apps (that I don't use)
