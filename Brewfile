@@ -43,6 +43,7 @@ cask 'slack'
 cask 'tableplus'
 cask 'visual-studio-code'
 cask 'zoom'
+cask 'webtorrent'
 
 # Fonts
 cask 'font-lato'
