@@ -83,12 +83,6 @@ ln -s /opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3 /opt/homebrew/bin/pyth
 
 <img src="/images/easymove.png" width="200">
 
-### DBngin
-
-<img src="/images/dbngin1.png">
-
-<img src="/images/dbngin2.png">
-
 ### Download terminal fondt
 
 https://www.jetbrains.com/lp/mono/

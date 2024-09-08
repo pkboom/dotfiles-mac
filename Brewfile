@@ -35,7 +35,6 @@ brew 'redis'
 brew 'yarn'
 
 # Apps
-cask 'dbngin'
 cask 'firefox'
 cask 'google-chrome'
 cask 'imageoptim'
