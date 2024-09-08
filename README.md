@@ -119,8 +119,16 @@ which node
 
 # Brew
 
-Permission
+If permission is a problem,
 
 ```sh
 sudo chown -R $(whoami) $(brew --prefix)/*
+```
+
+# Start brew services
+
+```sh
+brew services start mysql
+brew services start redis
+brew services start mailhog
 ```
