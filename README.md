@@ -125,10 +125,10 @@ If permission is a problem,
 sudo chown -R $(whoami) $(brew --prefix)/*
 ```
 
-# Start brew services
+# Mysql
+
+[Start mysql on boot↗](https://stackoverflow.com/a/44481290)
 
 ```sh
-brew services start mysql
-brew services start redis
-brew services start mailhog
+sudo brew services start mysql
 ```
