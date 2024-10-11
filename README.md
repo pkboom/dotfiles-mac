@@ -81,7 +81,7 @@ ln -s /opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3 /opt/homebrew/bin/pyth
 
 ### Easy move and resize setup
 
-<img src="/images/easymove.png" width="200">
+<img src="./images/easymove.png" width="200">
 
 ### Download terminal fondt
 
@@ -132,3 +132,9 @@ sudo chown -R $(whoami) $(brew --prefix)/*
 ```sh
 sudo brew services start mysql
 ```
+
+# DBeaver
+
+<img src="./images/dbeaver1.png" width="600">
+
+<img src="./images/dbeaver2.png" width="600">
