@@ -1,20 +1,9 @@
 #!/bin/bash
 
-# trim spaces
-url=$(echo {query} | tr -s '[:blank:]')
+THRESHOLD=80
 
-# remove `git clone`
-url=${url/git clone /}
+cpu_usage=$(top -l 1 | grep -E "CPU" | sed "s/.*: *\([0-9.]*\)% user.*/\1/" | awk '{print 100 - $1}')
 
-cd ~/code
-
-git clone $url
-
-if [ $? = 0 ]; then
-  # url starts with either `https://` or `git@`
-  repo=$(echo $url | rev | cut -d/ -f1 | sed "s/tig\.//" | rev)
-
-  code $repo
-
-  exit
+if (($(echo "$cpu_usage > $THRESHOLD" | bc -l))); then
+  echo "CPU usage is above $THRESHOLD%. Current usage: $cpu_usage%" | mail -s "CPU Alert" you@example.com
 fi
