@@ -128,6 +128,13 @@ click() {
 
 }
 
+jira() {
+  branch_name=$(git rev-parse --abbrev-ref HEAD)
+  task_id=$(echo "$branch_name" | cut -d- -f1-2)
+
+  open https://inboxmonster.atlassian.net/browse/$task_id
+}
+
 # create a tag
 gtp() {
   new_tag=$1

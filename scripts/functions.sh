@@ -164,24 +164,12 @@ create_autoload_files() {
     composer dump-autoload -d "$PWD"
 }
 
-mkdircode() {
-    mkdir -p "$@" && code "$@" || exit
-}
-
 mkdircd() {
     mkdir -p "$@" && cd "$@" || exit
 }
 
 rmrf() {
     rm -rf "$1"
-}
-
-cy() {
-    if [ -z "$1" ]; then # If no argument
-        npx cypress run
-    else
-        npx cypress run "$1"
-    fi
 }
 
 uuid() {
