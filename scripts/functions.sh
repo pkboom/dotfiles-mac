@@ -29,22 +29,6 @@ co() {
     cd "$HOME"/code && ls -lh --color=auto
 }
 
-dev() {
-    if [ -n "$1" ]; then
-        cd "$1" && npm run dev
-    else
-        npm run dev
-    fi
-}
-
-watch() {
-    if [ -n "$1" ]; then
-        cd "$1" && npx mix watch
-    else
-        npx mix watch
-    fi
-}
-
 xdebug() {
     # Anything after a ? in the first argument is used as the prompt string in zsh
     # equivalent to -p in bash

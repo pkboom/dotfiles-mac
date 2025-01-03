@@ -128,6 +128,10 @@ if [ "code" = "$DIR" ]; then
     ls
 fi
 
+if [ -f dev.sh ]; then
+    source dev.sh
+fi
+
 # https://zsh.sourceforge.io/Doc/Release/Completion-System.html#Functions-3
 # The first argument(_git) defines the function to call for completion.
 # All the arguments may have the form ‘cmd=service’.
