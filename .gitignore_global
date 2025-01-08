@@ -38,8 +38,7 @@ Thumbs.db
 .vscode
 .vagrant
 
-#Personal
 jsconfig.json
 playground.php
+dev.sh
 
-#inboxmonster
