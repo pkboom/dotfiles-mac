@@ -124,8 +124,13 @@ setopt rmstarsilent
 # Show directories if it's code directory.
 DIR=${PWD##*/}
 
+if [ "keunbae" = "$DIR" ]; then
+    cd ~/code
+    ls -lh --color=auto
+fi
+
 if [ "code" = "$DIR" ]; then
-    ls
+    ls -lh --color=auto
 fi
 
 if [ -f dev.sh ]; then
