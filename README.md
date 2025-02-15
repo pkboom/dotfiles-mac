@@ -138,3 +138,11 @@ sudo brew services start mysql
 <img src="./images/dbeaver1.png" width="600">
 
 <img src="./images/dbeaver2.png" width="600">
+
+# Google search engine
+
+chrome://settings/searchEngines
+
+<img src="./images/google_search_engine.png" width="600">
+
+{google:baseURL}search?q=%s&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:language}{google:prefetchSource}{google:searchClient}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}&num=100
