@@ -146,3 +146,7 @@ chrome://settings/searchEngines
 <img src="./images/google_search_engine.png" width="600">
 
 {google:baseURL}search?q=%s&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:language}{google:prefetchSource}{google:searchClient}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}&num=100
+
+## Alfred
+
+<img src="./images/alfred.png" width="600">
