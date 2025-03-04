@@ -230,7 +230,7 @@ gh_examples() {
     echo "gh auth login"
     echo "${GREEN}➜${NC} login to github"
     echo
-    echo "gh repo edit --add-topic ai"
+    echo "gh repo edit --add-topic ai --add-topic rag"
     echo "${GREEN}➜${NC} add topic 'ai'"
     echo
     echo "gh"
