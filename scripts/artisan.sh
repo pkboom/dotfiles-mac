@@ -2,7 +2,12 @@ a() {
     if [ -n "$1" ]; then
         case $1 in
         fresh)
-            php artisan migrate:fresh --seed
+            if [[ -n $2 ]]; then
+                php artisan migrate:fresh --seed "$2"
+            else
+                php artisan migrate:fresh --seed
+            fi
+
             ;;
         t)
             if [[ -n $2 ]]; then

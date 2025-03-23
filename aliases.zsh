@@ -17,14 +17,12 @@ alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
 
 # Git
 alias gp="git push"
-alias gpd="git push origin --delete"
 alias gs="git status"
 alias gc="git commit -m"
 alias gca="git commit -a -m"
 alias ga="git add ."
-alias gl='git log --decorate --oneline --graph --all'
+alias gl='git log --oneline --graph --all'
 alias gch='git checkout'
-alias gchd='git checkout develop'
 alias gbd="git branch -D"
 alias gr="git rebase"
 alias gt="git tag"
