@@ -9,7 +9,7 @@ ui = auto
 confilctstyle = diff3
 
 [core]
-editor = vim -f
+editor = nvim
 excludesfile = /Users/keunbae/.gitignore_global
 
 [credetial]

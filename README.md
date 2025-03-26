@@ -150,3 +150,7 @@ chrome://settings/searchEngines
 ## Alfred
 
 <img src="./images/alfred.png" width="600">
+
+# Neovim
+
+echo "alias vim=\"nvim\"" | tee -a ~/.zshrc
