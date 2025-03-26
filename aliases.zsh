@@ -37,3 +37,4 @@ alias dc="docker compose"
 
 # NeoVim
 alias vi="nvim"
+alias vim="nvim"
