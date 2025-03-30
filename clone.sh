@@ -5,4 +5,3 @@ echo "Cloning repositories..."
 CODE=$HOME/code
 
 git clone git@github.com:pkboom/experiment.git $CODE/experiment
-git clone git@github.com:laravel/framework.git $CODE/framework
