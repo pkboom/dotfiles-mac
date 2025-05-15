@@ -10,11 +10,7 @@ a() {
 
             ;;
         t)
-            if [[ -n $2 ]]; then
-                php artisan tinker-on-vscode --query "$2"
-            else
-                php artisan tinker-on-vscode --query
-            fi
+            php artisan tinker-on-vscode
 
             ;;
         d)

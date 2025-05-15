@@ -161,7 +161,7 @@ uuid() {
 }
 
 myip() {
-    curl -s https://ipecho.net/plain | tee /dev/tty | xclip -sel clip
+    curl -s https://ipecho.net/plain
 }
 
 clear_port() {
